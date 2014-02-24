@@ -1,13 +1,14 @@
 module RCleaner
-  class Process
+  class Dsl
     attr_reader :directory
+    attr_reader :steps
 
-    def initialize(directory)
-      @directory = directory
+    def initialize
       @steps = []
     end
 
-    def clean!
+    def clean(directory)
+      @directory = directory
     end
 
     private
