@@ -4,6 +4,10 @@ module RCleaner::Steps
       @finder = finder
     end
 
+    def pattern
+      @finder.pattern
+    end
+
     def perform_step!
       @finder.files.each do |f|
         FileUtils.rm(f)

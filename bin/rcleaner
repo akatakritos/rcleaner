@@ -1,0 +1,6 @@
+#!ruby
+require 'rubygems'
+require 'rcleaner'
+
+rfile = File.expand_path('~/.rfile')
+RCleaner::Application.new(rfile, Dir.getwd).run!

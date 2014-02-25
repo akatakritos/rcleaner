@@ -7,6 +7,10 @@ module RCleaner::Steps
       @destination = destination
     end
 
+    def pattern
+      @finder.pattern
+    end
+
     def perform_step!
       @finder.files.each do |f|
         FileUtils.cp(f, @destination)
