@@ -9,16 +9,25 @@ module RCleaner
 
     def clean(directory)
       @directory = directory
+      yield if block_given?
     end
 
     private
-      def move
+      def move(pattern, args={})
+        destination = args.fetch(:to, '/tmp')
+        finder = FileFinder.new(@directory, pattern)
+        @steps.push RCleaner::Steps::MoveStep.new(finder, destination)
       end
 
-      def copy
+      def copy(pattern, args={})
+        destination = args.fetch(:to, '/tmp')
+        finder = FileFinder.new(@directory, pattern)
+        @steps.push RCleaner::Steps::CopyStep.new(finder, destination)
       end
 
-      def delete
+      def delete(pattern)
+        finder = FileFinder.new(@directory, pattern)
+        @steps.push RCleaner::Steps::DeleteStep.new(finder)
       end
   end
 end

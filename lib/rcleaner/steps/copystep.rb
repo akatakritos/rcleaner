@@ -1,6 +1,7 @@
 module RCleaner::Steps
   class CopyStep
 
+    attr_reader :destination
     def initialize(finder, destination)
       @finder = finder
       @destination = destination

@@ -1,6 +1,7 @@
 module RCleaner::Steps
   class MoveStep
 
+    attr_reader :destination
     def initialize(finder, destination)
       @finder = finder
       @destination = destination
