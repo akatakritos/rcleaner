@@ -36,6 +36,16 @@ describe RCleaner::Dsl do
 
         dsl.directory.should == '/tmp'
       end
+
+      describe 'when the directory is :cwd' do
+        it 'should set the directory to the CWD' do
+          dsl.instance_eval do
+            clean :cwd
+          end
+
+          dsl.directory.should == Dir.getwd
+        end
+      end
     end
 
     describe 'move' do

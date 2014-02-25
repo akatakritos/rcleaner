@@ -8,7 +8,7 @@ module RCleaner
     end
 
     def clean(directory)
-      @directory = directory
+      @directory = directory == :cwd ? Dir.getwd : directory
       yield if block_given?
     end
 
