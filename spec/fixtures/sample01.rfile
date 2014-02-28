@@ -1,0 +1,5 @@
+clean :cwd do
+  copy '*.txt', to: "/tmp"
+  move "*.docx", to: "/tmp"
+  delete "*.cpp"
+end

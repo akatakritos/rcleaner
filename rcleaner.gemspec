@@ -5,7 +5,7 @@ require 'rcleaner/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "rcleaner"
-  spec.version       = Rcleaner::VERSION
+  spec.version       = RCleaner::VERSION
   spec.authors       = ["Matt Burke"]
   spec.email         = ["burkemd1+github@gmail.com"]
   spec.summary       = %q{cleans directories}

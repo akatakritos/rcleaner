@@ -7,7 +7,7 @@ module RCleaner
     end
 
     def run!
-      evaluator = RCleaner::DslEvaluator.new(rfile)
+      evaluator = RCleaner::DslEvaluator.new(@rfile)
       evaluator.steps.each do |step|
         step.perform_step!
       end
